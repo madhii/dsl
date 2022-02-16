@@ -9,11 +9,14 @@ job('DockerBuildandPublishDSL') {
             branch('*/' + 'sonarqube')
         }
     }
-
     steps {
         dockerBuildAndPublish {
             repositoryName('1514150/hexaware')
+            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
             registryCredentials('docker')
+            forcePull(false)
+            createFingerprints(false)
+            skipDecorate()
         }
     }
 }
