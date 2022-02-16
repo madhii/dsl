@@ -6,7 +6,7 @@ job('DockerBuildandPublishDSL') {
                 url('https://github.com/madhii/ecomm.git')
                 credentials('git')
             }
-            branch('*/' + 'sonar')
+            branch('*/' + 'sonarqube')
         }
     }
 
