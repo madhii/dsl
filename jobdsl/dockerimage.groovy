@@ -1,8 +1,9 @@
 job('NodeJS Docker example') {
     scm {
-        url('https://github.com/madhii/ecomm.git')
+        url('https://github.com/madhii/ecomm.git'){
                 credentials('git')
         }
+        branch('*/' + 'sonarqube')
     }
     triggers {
         scm('H/5 * * * *')
