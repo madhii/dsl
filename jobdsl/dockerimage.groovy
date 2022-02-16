@@ -1,20 +1,20 @@
-job('DockerBuildandPublishDSL') {
-    description('Build and Publish docker image')
-     scm {
-        git {
-        remote {
-                url('https://github.com/madhii/ecomm.git')
+job('NodeJS Docker example') {
+    scm {
+        url('https://github.com/madhii/ecomm.git')
                 credentials('git')
-            }
-            branch('*/' + 'sonarqube')
         }
     }
+    triggers {
+        scm('H/5 * * * *')
+    }
+    
     steps {
         dockerBuildAndPublish {
             repositoryName('1514150/hexaware')
-            tag('${BUILD_TIMESTAMP}-${GIT_REVISION,length=7}')
+            tag('${GIT_REVISION,length=9}')
             registryCredentials('docker')
             forcePull(false)
+            forceTag(false)
             createFingerprints(false)
             skipDecorate()
         }
