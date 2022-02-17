@@ -13,7 +13,10 @@ job('ReactJS Docker example') {
             repositoryName('1514150/hexaware')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('docker')
-          
+            forcePull(false)
+            forceTag(false)
+            createFingerprints(false)
+            skipDecorate()
         }
     }
 }
