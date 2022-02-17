@@ -1,4 +1,5 @@
 job('NodeJS Docker example') {
+   scm{
     git {
         remote {
                 url('https://github.com/madhii/ecomm.git')
@@ -9,7 +10,7 @@ job('NodeJS Docker example') {
     triggers {
         scm('H/5 * * * *')
     }
-    
+   }
     steps {
         dockerBuildAndPublish {
             repositoryName('1514150/hexaware')
