@@ -1,4 +1,4 @@
-job('ReactJS Docker example') {
+job('Reactapp Docker example') {
    scm{
     git {
         remote {
