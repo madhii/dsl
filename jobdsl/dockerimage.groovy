@@ -7,9 +7,6 @@ job('NodeJS Docker example') {
             }
             branch('*/' + 'sonarqube')
         }
-    triggers {
-        scm('H/5 * * * *')
-    }
    }
     steps {
         dockerBuildAndPublish {
