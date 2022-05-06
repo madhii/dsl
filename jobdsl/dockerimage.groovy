@@ -11,7 +11,7 @@ job('Reactapp Docker example') {
     steps {
         dockerBuildAndPublish {
             repositoryName('1514150/hexaware')
-            tag('${GIT_REVISION,length=9}')
+            tag('${GIT_REVISION,length=8}')
             registryCredentials('docker')
             forcePull(false)
             forceTag(false)
